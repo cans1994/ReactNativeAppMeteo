@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-//import React from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+
+import DateTime from './components/DateTime';
+
 
 const img = require('./assets/beach.jpg')
 export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={img} style={styles.image} >
-      <Text>Hello !</Text>
+      <DateTime />
       <StatusBar style="auto" />
       </ImageBackground>
     </View>
