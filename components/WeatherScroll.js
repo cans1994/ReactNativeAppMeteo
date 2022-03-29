@@ -12,12 +12,12 @@ const WeatherScroll = () => {
 const CurrentTempE1 = () => {
   const img = { uri: "http://openweathermap.org/img/wn/10d@2x.png" };
   return (
-    <View>
+    <View style={styles.currentTempContainer}>
       <Image source={img} style={styles.image} />
-      <View>
-        <Text>Mardi</Text>
-        <Text>Soir - </Text>
-        <Text>Jour - </Text>
+      <View style={styles.otherContainer}>
+        <Text style={styles.day}>Mardi</Text>
+        <Text style={styles.temp}>Soir - 9&#176;C</Text>
+        <Text style={styles.temp}>Jour - 15&#176;C</Text>
       </View>
     </View>
   );
@@ -33,6 +33,35 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
   },
+  currentTempContainer: {
+    flexDirection: 'row',
+    backgroundColor: '#00000033',
+    justifyContent:"center",
+    alignItems:'center',
+    borderRadius: 10,
+    borderColor:'#eee',
+    borderWidth:1,
+    padding: 15
+  },
+  day: {
+    fontSize: 20,
+    color:"white",
+    backgroundColor: "#3c3c44",
+    padding: 10,
+    textAlign:"center",
+    borderRadius: 50,
+    fontWeight: "200",
+    marginBottom: 15
+},
+temp: {
+    fontSize: 16,
+    color:"white",
+    fontWeight:"100",
+    textAlign:"center"
+},
+otherContainer: {
+    paddingRight: 40
+}
 });
 
 export default WeatherScroll;
