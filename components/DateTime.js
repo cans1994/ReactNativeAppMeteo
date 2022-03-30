@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import moment from 'moment-timezone';
+
 
 const days = [
   "Dimanche",
