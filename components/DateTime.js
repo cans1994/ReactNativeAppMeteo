@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import moment from 'moment-timezone';
-
+import moment from "moment-timezone";
 
 const days = [
   "Dimanche",
@@ -39,7 +38,7 @@ const WeatherItem = ({ title, value, unit }) => {
   );
 };
 
-const DateTime = ({ current, lat, lon, timezone }) => {
+const DateTime = ({ current, lat, lon, timezone, country, city }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -105,7 +104,7 @@ const DateTime = ({ current, lat, lon, timezone }) => {
         </View>
       </View>
       <View style={styles.rightAlign}>
-        <Text style={styles.timezone}>{timezone}</Text>
+        <Text style={styles.city}>{country + " " + city}</Text>
         <Text style={styles.latlong}>
           {lat}N {lon}E
         </Text>
@@ -135,7 +134,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginTop: 20,
   },
-  timezone: {
+  city: {
     fontSize: 20,
     color: "white",
   },
