@@ -30,6 +30,8 @@ export default function App() {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
       );
 
+      await Promise.resolve();
+
       // fetch renvoie une promesse / on attend le résultat de la promesse
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
@@ -52,7 +54,8 @@ export default function App() {
       // locationname[0] : informations sur la première ville
       data.country = locationname[0].country;
       data.city = locationname[0].local_names["fr"] ?? locationname[0].name;
-      console.log(data);
+
+      //console.log(data);
 
       setData(data);
     }
