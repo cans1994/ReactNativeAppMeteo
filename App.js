@@ -2,8 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import * as Location from 'expo-location';
+import API_KEY from "./.env";
 
-const API_KEY =  'bf9cb2445c29d9691f0fca5b144e74df';
 import DateTime from "./components/DateTime";
 import WeatherScroll from "./components/WeatherScroll";
 
